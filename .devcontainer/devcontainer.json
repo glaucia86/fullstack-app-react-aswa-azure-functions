@@ -32,9 +32,9 @@
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8000,
+		5173,
 		7071
-	],
+	]
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "npm install",
 }
