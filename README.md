@@ -28,7 +28,16 @@ Therefore, the main goal of this project is to teach how to create a Full Stack 
 
 ### Frontend
 
-TBI
+Estamos usando o Vite para o frontend. Para rodar o frontend, execute os seguintes comandos:
+
+```bash
+cd client/todo-list
+
+npm install
+npm run dev
+```
+
+Depois de rodar o comando `npm run dev`, o frontend estará disponível em `http://localhost:5178`.
 
 ### Backend
 
