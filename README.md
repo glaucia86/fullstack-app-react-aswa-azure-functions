@@ -8,8 +8,6 @@ The purpose of this application is to teach how to create a Full Stack applicati
 - [Azure Container Apps](https://docs.microsoft.com/en-us/azure/container-apps/)
 - [Prisma](https://www.prisma.io/)
 - [Azure SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/database/)
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [Playwright](https://playwright.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
