@@ -1,0 +1,1 @@
+# Full Stack Todo Application com React, Azure Static Web Apps e Azure Functions - Parte 02
