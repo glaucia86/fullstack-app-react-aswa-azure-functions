@@ -46,19 +46,19 @@ Isso garante que todas as bibliotecas e ferramentas necessárias estejam dispon�
 
 Para adicionar o Tailwind CSS ao nosso projeto, seguimos os seguintes passos:
 
-- 1. Instalamos o Tailwind CSS e suas dependências:
+1. Instalamos o Tailwind CSS e suas dependências:
 
 ```bash
 npm install -D tailwindcss postcss autoprefixer
 ```
 
-- 2. Inicializamos o arquivo de configuração do Tailwind CSS:
+2. Inicializamos o arquivo de configuração do Tailwind CSS:
 
 ```bash
 npx tailwindcss init
 ```
 
-- 3. Configuração do arquivo `tailwind.config.js`:
+3. Configuração do arquivo `tailwind.config.js`:
 
 Atualizamos o arquivo de configuração do Tailwind para incluir os caminhos dos nossos arquivos de template:
 
@@ -75,7 +75,7 @@ export default {
 
 Isso garante que o Tailwind CSS seja aplicado a todos os componentes e páginas da aplicação.
 
-- 4. Adição das diretivas do Tailwind ao arquivo CSS principal:
+4. Adição das diretivas do Tailwind ao arquivo CSS principal:
 
 No arquivo `index.css`, importamos as diretivas do Tailwind CSS:
 
@@ -119,13 +119,13 @@ Essa customização inicial estabelece a estrutura básica da aplicação e prep
 
 Para melhorar a interface do usuário, decidimos utilizar o pacote Hero Icons, que oferece uma variedade de ícones SVG otimizados para uso com React e Tailwind CSS.
 
-- 1. Instalação do Hero Icons:
+1. Instalação do Hero Icons:
 
 ```bash
 npm install @heroicons/react
 ```
 
-- 2. Importação e uso de um ícone:
+2. Importação e uso de um ícone:
 
 No componente principal, importamos e utilizamos um ícone para adicionar um elemento visual à aplicação:
 
@@ -171,10 +171,10 @@ Durante o desenvolvimento, enfrentamos alguns desafios, principalmente relaciona
 
 Nesta primeira parte do desenvolvimento, conseguimos configurar o ambiente básico da nossa aplicação Todo List, integrando React com Vite e Tailwind CSS. Também adicionamos ícones para melhorar a interface do usuário. Este é apenas o começo de um projeto mais amplo que incluirá:
 
-🔹Desenvolvimento da funcionalidade CRUD para as tarefas.
-🔹Integração com o backend utilizando Azure Functions.
-🔹Configuração do deployment com Azure Static Web Apps.
-🔹Implementação de testes automatizados com Playwright e GitHub Actions.
+- 🔹Desenvolvimento da funcionalidade CRUD para as tarefas.
+- 🔹Integração com o backend utilizando Azure Functions.
+- 🔹Configuração do deployment com Azure Static Web Apps.
+- 🔹Implementação de testes automatizados com Playwright e GitHub Actions.
 
 Este projeto serve como um excelente exemplo de como tecnologias modernas podem ser combinadas para criar aplicações web eficientes e escaláveis. Continuaremos a explorar e adicionar funcionalidades em futuras sessões de desenvolvimento, onde abordaremos a integração com serviços da Azure e a implementação de práticas de CI/CD.
 
