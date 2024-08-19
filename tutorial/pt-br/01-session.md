@@ -10,10 +10,10 @@ Vídeo: [Full Stack Todo App with React, Azure Static Web Apps and Azure Functio
 
 O objetivo deste projeto é desenvolver uma aplicação Todo List utilizando React, integrando-a com serviços Azure como:
 
-🔹Azure Static Web Apps
-🔹Azure Functions
-🔹Azure Container Apps
-🔹Azure SQL Database
+- 🔹Azure Static Web Apps
+- 🔹Azure Functions
+- 🔹Azure Container Apps
+- 🔹Azure SQL Database
 
 Além disso, utilizaremos o Prisma como ORM e o GitHub Actions para CI/CD. Este projeto visa demonstrar como combinar essas tecnologias para criar uma aplicação web robusta, escalável e de fácil manutenção.
 
