@@ -13,6 +13,7 @@
 			"version": "latest",
 			"installBicep": true
 		},
+		"ghcr.io/devcontainers/features/azure-functions-core-tools:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/powershell:1": {},
 		"ghcr.io/azure/azure-dev/azd:latest": {}
@@ -26,15 +27,22 @@
 				"ms-azuretools.vscode-bicep",
 				"humao.rest-client",
 				"esbenp.prettier-vscode",
-				"GitHub.codespaces"
+				"GitHub.codespaces",
+				"ms-azuretools.vscode-azurefunctions",
+				"ms-vscode.vscode-node-azure-pack",
+				"ms-azuretools.vscode-cosmosdb"
 			]
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8000,
+		5173,
 		7071
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "npm install",
+	"postCreateCommand": "cd api && npm install && cd ../client && npm install",
+	"containerEnv": {
+		"DATABASE_URL": "database_url_here",
+		"API_URL": "http://localhost:7071"
+	}
 }
