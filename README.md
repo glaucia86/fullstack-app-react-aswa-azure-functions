@@ -1,4 +1,4 @@
-# Full Stack Todo App with React, Azure Static Web Apps and Azure Functions
+# Full Stack Application with React, Azure Static Web Apps and Azure Functions
 
 The purpose of this application is to teach how to create a Full Stack application using the following technologies:
 
@@ -16,9 +16,9 @@ The purpose of this application is to teach how to create a Full Stack applicati
   - [Bicep](https://github.com/Azure/bicep)
   - [Terraform](https://www.terraform.io/)
 
-## Why another Todo application?
+## Why another CRUD application?
 
-We noticed that most Todo application examples only teach how to create the application itself. However, they do not teach how to make the application available in the cloud in a secure, scalable, and cost-effective way.
+We noticed that most CRUD application examples only teach how to create the application itself. However, they do not teach how to make the application available in the cloud in a secure, scalable, and cost-effective way.
 
 Therefore, the main goal of this project is to teach how to create a Full Stack application and make it available in the cloud in a secure, scalable, and cost-effective way.
 
