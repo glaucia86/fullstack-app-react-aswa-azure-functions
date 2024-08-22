@@ -1,14 +1,14 @@
-# Full Stack Todo Application com React, Azure Static Web Apps e Azure Functions - Parte 01
+# Full Stack Application com React, Azure Static Web Apps e Azure Functions - Parte 01
 
 Link repositório: **[https://github.com/glaucia86/todo-react-aswa-azure-functions](https://github.com/glaucia86/todo-react-aswa-azure-functions)**
 
 ## Link para o vídeo (Live Coding) da Parte 01:
 
-Vídeo: [Full Stack Todo App with React, Azure Static Web Apps and Azure Functions - Parte 01](https://www.youtube.com/live/lzCy6C_rf4c?si=3ULSG8OFS2FoKR5P)
+Vídeo: [Full Stack CRUD App with React, Azure Static Web Apps and Azure Functions - Parte 01](https://www.youtube.com/live/lzCy6C_rf4c?si=3ULSG8OFS2FoKR5P)
 
 ## Introdução ao Projeto
 
-O objetivo deste projeto é desenvolver uma aplicação Todo List utilizando React, integrando-a com serviços Azure como:
+O objetivo deste projeto é desenvolver uma aplicação CRUD utilizando React, integrando-a com serviços Azure como:
 
 - 🔹Azure Static Web Apps
 - 🔹Azure Functions
