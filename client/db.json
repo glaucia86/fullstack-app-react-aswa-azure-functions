@@ -1,3 +1,13 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "id": "8b95",
+      "name": "Glaucia ",
+      "job_role": "Software Developer",
+      "salary": 10000,
+      "employee_registration": 12453,
+      "createdAt": "2024-08-25T20:40:36.004Z",
+      "updatedAt": "2024-08-25T20:40:36.004Z"
+    }
+  ]
 }

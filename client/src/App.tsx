@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import ListEmployees from './pages/EmployeeList';
+import ListEmployees from './pages/ListEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
 
 const App: React.FC = () => {

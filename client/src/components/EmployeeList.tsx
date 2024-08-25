@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Employee } from '../types/employee.interface';
-import { getEmployees, deleteEmployee } from '../services/employee.services';
+import { deleteEmployee, getEmployees } from '../services/employee.services';
 
 const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
