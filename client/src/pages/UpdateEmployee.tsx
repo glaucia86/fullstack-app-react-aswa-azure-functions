@@ -20,7 +20,8 @@ const UpdateEmployee: React.FC = () => {
       }
 
       try {
-        const data = await getEmployeeById(parseInt(id));
+        const data = await getEmployeeById(id);
+        console.log('Employee data: ', data);
         setEmployee(data);
         setLoading(false);
       } catch (error: unknown) {
@@ -39,7 +40,7 @@ const UpdateEmployee: React.FC = () => {
     if (!id) return;
 
     try {
-      await updateEmployee(parseInt(id), updatedEmployee);
+      await updateEmployee(id, updatedEmployee);
       navigate('/list');
     } catch (error: unknown) {
       const err = error as Error;
