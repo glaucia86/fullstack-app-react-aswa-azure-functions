@@ -31,7 +31,7 @@ const EmployeeList: React.FC = () => {
     }
   };
 
-  const handleUpdate = (id: number) => {
+  const handleUpdate = (id: string) => {
     navigate(`/update/${id}`);
   };
 
