@@ -13,11 +13,11 @@ const Home: React.FC = () => {
     try {
       await createEmployee(employee);
       navigate('/list');
-    } catch (error: unknown) {
-      const err = error as Error;
-      console.error('Failed to create employee:', err.message);
+    } catch (error) {
+      console.error('Error creating employee:', error);
     }
   };
+
   return (
     <div className='container mx-auto mt-8'>
       <h1 className='text-3xl font-bold mb-4'>Add New Employee</h1>
