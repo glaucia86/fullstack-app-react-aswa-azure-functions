@@ -68,7 +68,7 @@ export default function EmployeeForm({
     <form onSubmit={handleEmployeeSubmit} className='max-w-md mx-auto'>
       <div className='mb-4'>
         <label htmlFor='name' className='block mb-2'>
-          Name
+          Name:
         </label>
         <input
           type='text'
