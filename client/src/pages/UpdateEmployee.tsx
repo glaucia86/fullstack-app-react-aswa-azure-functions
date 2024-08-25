@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import EmployeeForm from '../components/EmployeeForm';
-import { getEmployeeById, updateEmployee } from '../services/employee.services';
 import { Employee } from '../types/employee.interface';
+import { getEmployeeById, updateEmployee } from '../services/employee.services';
+import EmployeeForm from '../components/EmployeeForm';
 
 const UpdateEmployee: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,15 +13,19 @@ const UpdateEmployee: React.FC = () => {
 
   useEffect(() => {
     const fetchEmployee = async () => {
-      if (!id) return;
+      if (!id) {
+        setError('Employee ID is missing');
+        setLoading(false);
+        return;
+      }
+
       try {
-        setLoading(true);
-        const data = await getEmployeeById(parseInt(id, 10));
+        const data = await getEmployeeById(parseInt(id));
         setEmployee(data);
-      } catch (err) {
-        console.error('Error fetching employee:', err);
-        setError('Failed to fetch employee data');
-      } finally {
+        setLoading(false);
+      } catch (error: unknown) {
+        const err = error as Error;
+        console.error(`Failed to fetch employee: ${err.message}`);
         setLoading(false);
       }
     };
@@ -33,20 +37,19 @@ const UpdateEmployee: React.FC = () => {
     updatedEmployee: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>
   ) => {
     if (!id) return;
+
     try {
-      await updateEmployee(parseInt(id, 10), updatedEmployee);
+      await updateEmployee(parseInt(id), updatedEmployee);
       navigate('/list');
-    } catch (err) {
-      console.error('Error updating employee:', err);
-      setError('Failed to update employee');
+    } catch (error: unknown) {
+      const err = error as Error;
+      console.error(`Failed to update employee: ${err.message}`);
     }
   };
 
-  if (loading) return <div className='text-center mt-8'>Loading...</div>;
-  if (error)
-    return <div className='text-center mt-8 text-red-500'>{error}</div>;
-  if (!employee)
-    return <div className='text-center mt-8'>Employee not found</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!employee) return <div>Employee not found</div>;
 
   return (
     <div className='container mx-auto mt-8'>
