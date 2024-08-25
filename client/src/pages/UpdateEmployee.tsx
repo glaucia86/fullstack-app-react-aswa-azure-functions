@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Employee } from '../types/employee.interface';
 import { getEmployeeById, updateEmployee } from '../services/employee.services';
 import EmployeeForm from '../components/EmployeeForm';
+import Swal from 'sweetalert2';
 
 const UpdateEmployee: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,6 +29,12 @@ const UpdateEmployee: React.FC = () => {
         const err = error as Error;
         console.error(`Failed to fetch employee: ${err.message}`);
         setLoading(false);
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was a problem fetching employee',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
       }
     };
 
@@ -37,14 +44,44 @@ const UpdateEmployee: React.FC = () => {
   const handleSubmit = async (
     updatedEmployee: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>
   ) => {
-    if (!id) return;
+    const result = await Swal.fire({
+      title: 'Are you sure you want to update this employee?',
+      text: 'Do you want to save these changes?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, save it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true,
+    });
 
-    try {
-      await updateEmployee(id, updatedEmployee);
-      navigate('/list');
-    } catch (error: unknown) {
-      const err = error as Error;
-      console.error(`Failed to update employee: ${err.message}`);
+    if (result.isConfirmed) {
+      if (!id) return;
+
+      try {
+        await updateEmployee(id, updatedEmployee);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Employee updated successfully!',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        });
+        navigate('/list');
+      } catch (error: unknown) {
+        const err = error as Error;
+        console.error(`Failed to update employee: ${err.message}`);
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was a problem updating employee',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      }
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire({
+        title: 'Cancelled',
+        text: 'Employee update has been cancelled',
+        icon: 'error',
+      });
     }
   };
 
