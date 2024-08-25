@@ -41,23 +41,29 @@ const EmployeeList: React.FC = () => {
       <table className='min-w-full bg-white border border-gray-300'>
         <thead>
           <tr>
-            <th className='py-2 px-4 border-b'>Name</th>
-            <th className='py-2 px-4 border-b'>Job Role</th>
-            <th className='py-2 px-4 border-b'>Salary</th>
-            <th className='py-2 px-4 border-b'>Registration</th>
-            <th className='py-2 px-4 border-b'>Actions</th>
+            <th className='py-2 px-4 border-b text-center'>Name</th>
+            <th className='py-2 px-4 border-b text-center'>Job Role</th>
+            <th className='py-2 px-4 border-b text-center'>Salary</th>
+            <th className='py-2 px-4 border-b text-center'>Registration</th>
+            <th className='py-2 px-4 border-b text-center'>Actions</th>
           </tr>
         </thead>
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.id}>
-              <td className='py-2 px-4 border-b'>{employee.name}</td>
-              <td className='py-2 px-4 border-b'>{employee.job_role}</td>
-              <td className='py-2 px-4 border-b'>${employee.salary}</td>
-              <td className='py-2 px-4 border-b'>
+              <td className='py-2 px-4 border-b text-center'>
+                {employee.name}
+              </td>
+              <td className='py-2 px-4 border-b text-center'>
+                {employee.job_role}
+              </td>
+              <td className='py-2 px-4 border-b text-center'>
+                ${employee.salary}
+              </td>
+              <td className='py-2 px-4 border-b text-center'>
                 {employee.employee_registration}
               </td>
-              <td className='py-2 px-4 border-b'>
+              <td className='py-2 px-4 border-b text-center flex justify-center items-center'>
                 <button
                   onClick={() => handleUpdate(employee.id)}
                   className='bg-blue-500 text-white px-2 py-1 rounded mr-2'
