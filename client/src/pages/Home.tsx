@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { Employee } from '../types/employee.interface';
 import { createEmployee } from '../services/employee.services';
@@ -12,9 +13,20 @@ const Home: React.FC = () => {
   ) => {
     try {
       await createEmployee(employee);
+      Swal.fire({
+        title: 'Success!',
+        text: 'Employee created successfully!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
       navigate('/list');
     } catch (error) {
       console.error('Error creating employee:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      });
     }
   };
 
