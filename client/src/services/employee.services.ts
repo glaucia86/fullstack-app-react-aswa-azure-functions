@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Employee } from '../types/employee.interface';
 
-const API_BASE_URL = 'http://localhost:3000/employees/';
+const API_BASE_URL = 'http://localhost:3000/employees';
 
 const employeeApi = axios.create({
   baseURL: API_BASE_URL,
@@ -12,7 +12,7 @@ const employeeApi = axios.create({
 
 export const getEmployees = async (): Promise<Employee[]> => {
   try {
-    const response = await employeeApi.get<Employee[]>('');
+    const response = await employeeApi.get<Employee[]>('/');
     return response.data;
   } catch (error: unknown) {
     const err = error as Error;
@@ -21,9 +21,9 @@ export const getEmployees = async (): Promise<Employee[]> => {
   }
 }
 
-export const getEmployeeById = async (id: number): Promise<Employee> => {
+export const getEmployeeById = async (id: string): Promise<Employee> => {
   try {
-    const response = await employeeApi.get<Employee>(`${id}`);
+    const response = await employeeApi.get<Employee>(`/${id}`);
     return response.data;
   } catch (error: unknown) {
     const err = error as Error;
@@ -34,7 +34,7 @@ export const getEmployeeById = async (id: number): Promise<Employee> => {
 
 export const createEmployee = async (employee: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>): Promise<Employee> => {
   try {
-    const response = await employeeApi.post<Employee>('', {
+    const response = await employeeApi.post<Employee>('/', {
       ...employee,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -47,9 +47,9 @@ export const createEmployee = async (employee: Omit<Employee, 'id' | 'createdAt'
   }
 }
 
-export const updateEmployee = async (id: number, employee: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>): Promise<Employee> => {
+export const updateEmployee = async (id: string, employee: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>): Promise<Employee> => {
   try {
-    const response = await employeeApi.put<Employee>(`${id}`, {
+    const response = await employeeApi.put<Employee>(`/${id}`, {
       ...employee,
       updatedAt: new Date().toISOString(),
     });
@@ -61,9 +61,9 @@ export const updateEmployee = async (id: number, employee: Omit<Employee, 'id' |
   }
 }
 
-export const deleteEmployee = async (id: number): Promise<void> => {
+export const deleteEmployee = async (id: string): Promise<void> => {
   try {
-    await employeeApi.delete<void>(`${id}`);
+    await employeeApi.delete<void>(`/${id}`);
   } catch (error: unknown) {
     const err = error as Error;
     console.error(`Failed to delete employee, ${err.message}`);
