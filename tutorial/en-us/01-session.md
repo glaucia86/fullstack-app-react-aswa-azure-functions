@@ -43,7 +43,7 @@ npm run mock-api
 
 Now you can access the application in your browser at `http://localhost:5173/` and see it running locally. If it’s working like the gif below, you’re on the right track:
 
-![Frontend Project](./images/frontend-project.gif)
+![Frontend Project](../images/frontend-project.gif)
 
 Now, if you want to learn how to create the project from scratch, move on to the next section.
 
