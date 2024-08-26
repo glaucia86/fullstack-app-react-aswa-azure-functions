@@ -65,10 +65,10 @@ export default function EmployeeForm({
   };
 
   return (
-    <form onSubmit={handleEmployeeSubmit} className='max-w-md mx-auto'>
+    <form onSubmit={handleEmployeeSubmit} className='max-w-md'>
       <div className='mb-4'>
-        <label htmlFor='name' className='block mb-2'>
-          Name:
+        <label htmlFor='name' className='block mb-2 font-bold'>
+          Name
         </label>
         <input
           type='text'
@@ -81,8 +81,8 @@ export default function EmployeeForm({
         />
       </div>
       <div className='mb-4'>
-        <label htmlFor='job_role' className='block mb-2'>
-          Job Role:
+        <label htmlFor='job_role' className='block mb-2 font-bold'>
+          Job Role
         </label>
         <input
           type='text'
@@ -95,8 +95,8 @@ export default function EmployeeForm({
         />
       </div>
       <div className='mb-4'>
-        <label htmlFor='salary' className='block mb-2'>
-          Salary:
+        <label htmlFor='salary' className='block mb-2 font-bold'>
+          Salary
         </label>
         <input
           type='number'
@@ -109,8 +109,8 @@ export default function EmployeeForm({
         />
       </div>
       <div className='mb-4'>
-        <label htmlFor='employee_registration' className='block mb-2'>
-          Employee Registration:
+        <label htmlFor='employee_registration' className='block mb-2 font-bold'>
+          Employee Registration
         </label>
         <input
           type='number'
