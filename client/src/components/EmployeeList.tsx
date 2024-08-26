@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import { NumericFormat } from 'react-number-format';
 import { useNavigate } from 'react-router-dom';
 import { Employee } from '../types/employee.interface';
 import { deleteEmployee, getEmployees } from '../services/employee.services';
-import Swal from 'sweetalert2';
 
 const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -93,7 +94,12 @@ const EmployeeList: React.FC = () => {
                 {employee.job_role}
               </td>
               <td className='py-2 px-4 border-b text-center'>
-                ${employee.salary}
+                <NumericFormat
+                  value={employee.salary}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  prefix={'$'}
+                />
               </td>
               <td className='py-2 px-4 border-b text-center'>
                 {employee.employee_registration}

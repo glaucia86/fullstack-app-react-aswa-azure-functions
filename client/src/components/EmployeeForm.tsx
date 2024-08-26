@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import { Employee } from '../types/employee.interface';
+import { NumericFormat, NumericFormatProps } from 'react-number-format';
 
 interface EmployeeFormProps {
   employee?: Employee;
@@ -54,6 +55,11 @@ export default function EmployeeForm({
     dispatch({ field: name as keyof EmployeeFormState, value });
   }
 
+  const handleSalaryChange = (values: NumericFormatProps) => {
+    const valueString = values.value ? values.value.toString() : '';
+    dispatch({ field: 'salary', value: valueString });
+  };
+
   const handleEmployeeSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit({
@@ -98,12 +104,13 @@ export default function EmployeeForm({
         <label htmlFor='salary' className='block mb-2 font-bold'>
           Salary
         </label>
-        <input
-          type='number'
+        <NumericFormat
           id='salary'
           name='salary'
           value={salary}
-          onChange={handleEmployeeFormChange}
+          onValueChange={handleSalaryChange}
+          thousandSeparator={true}
+          prefix={'$'}
           required
           className='w-full px-3 py-2 border rounded'
         />
