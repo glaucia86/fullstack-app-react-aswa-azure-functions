@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Swal from 'sweetalert2';
-import { NumericFormat } from 'react-number-format';
 import { useNavigate } from 'react-router-dom';
 import { Employee } from '../types/employee.interface';
 import { deleteEmployee, getEmployees } from '../services/employee.services';
+
+import Swal from 'sweetalert2';
+import { NumericFormat } from 'react-number-format';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -107,15 +109,15 @@ const EmployeeList: React.FC = () => {
               <td className='py-2 px-4 border-b text-center flex justify-center items-center'>
                 <button
                   onClick={() => handleUpdate(employee.id)}
-                  className='bg-blue-500 text-white px-2 py-1 rounded mr-2'
+                  className='bg-blue-500 text-white px-2 py-1 rounded flex items-center justify-center'
                 >
-                  Update
+                  <FaEdit />
                 </button>
                 <button
                   onClick={() => handleDelete(employee.id)}
-                  className='bg-red-500 text-white px-2 py-1 rounded'
+                  className='bg-red-500 text-white px-2 py-1 rounded flex items-center justify-center ml-2'
                 >
-                  Delete
+                  <FaTrash />
                 </button>
               </td>
             </tr>
