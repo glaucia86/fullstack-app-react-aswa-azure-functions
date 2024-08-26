@@ -11,7 +11,6 @@ The purpose of this application is to teach how to create a Full Stack applicati
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [Playwright](https://playwright.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [App Spaces](https://docs.microsoft.com/en-us/azure/app-spaces/)
 - IaC (Infrastructure as Code)
   - [Bicep](https://github.com/Azure/bicep)
   - [Terraform](https://www.terraform.io/)
