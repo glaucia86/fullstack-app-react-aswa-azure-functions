@@ -73,8 +73,7 @@ const EmployeeList: React.FC = () => {
 
   return (
     <div className='container mx-auto mt-8'>
-      <h2 className='text-2xl font-bold mb-4'>Employee List</h2>
-      <table className='min-w-full bg-white border border-gray-300'>
+      <table className='min-w-full bg-white border border-gray-300 shadow-lg'>
         <thead>
           <tr>
             <th className='py-2 px-4 border-b text-center'>Name</th>
