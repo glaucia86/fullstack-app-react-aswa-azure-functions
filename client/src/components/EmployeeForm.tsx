@@ -1,6 +1,8 @@
 import React, { useReducer } from 'react';
 import { Employee } from '../types/employee.interface';
+
 import { NumericFormat, NumericFormatProps } from 'react-number-format';
+import { FaPlus, FaEdit } from 'react-icons/fa';
 
 interface EmployeeFormProps {
   employee?: Employee;
@@ -131,9 +133,19 @@ export default function EmployeeForm({
       </div>
       <button
         type='submit'
-        className='bg-blue-500 text-white px-4 py-2 rounded'
+        className='bg-blue-500 text-white px-4 py-2 rounded flex items-center space-x-2'
       >
-        {employee ? 'Update' : 'Create'}
+        {employee ? (
+          <>
+            <FaEdit />
+            <span>Update</span>
+          </>
+        ) : (
+          <>
+            <FaPlus />
+            <span>Create</span>
+          </>
+        )}
       </button>
     </form>
   );
