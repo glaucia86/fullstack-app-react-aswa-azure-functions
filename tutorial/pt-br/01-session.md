@@ -42,6 +42,8 @@ Abre um outro terminal e execute o comando:
 npm run mock-api
 ```
 
+> **Nota**: se preferir, você pode executar o comando: `npm run dev-start`. Este comando irá iniciar a aplicação e o `json-server` ao mesmo tempo.
+
 Agora você pode acessar a aplicação no seu navegador através da URL: `http://localhost:5173/`, e ver a aplicação rodando localmente. Se estiver executando como o gif abaixo, então você está no caminho certo:
 
 ![Frontend Project](../images/frontend-project.gif)
