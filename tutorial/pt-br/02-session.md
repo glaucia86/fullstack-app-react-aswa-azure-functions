@@ -241,6 +241,8 @@ npm run dev
 
 Este comando iniciará o servidor de desenvolvimento do Vite. Abra o browser de sua preferência e acesse o endereço: `http://localhost:5173/`. Você verá a página inicial do projeto React com Vite.
 
+> **Nota**: se você preferir, pode executar o comando: `npm run dev-start`. Esse comando iniciará a aplicação e o `json-server` ao mesmo tempo.
+
 ## Conclusão
 
 E é isso! Nessa sessão, aprendemos a configurar o ambiente de desenvolvimento para o projeto de gerenciamento de funcionários.
@@ -250,7 +252,7 @@ Na próxima sessão, vamos criar a estrutura de pastas e arquivos que serão nec
 
 Até a próxima sessão!
 
-**[Próximo: Sessão 01 ➡️](01-session.md)** | **[Próximo: Sessão 03 ➡️](03-session.md)**
+**[Anterior: Sessão 01 ➡️](01-session.md)** | **[Próximo: Sessão 03 ➡️](03-session.md)**
 
 
 

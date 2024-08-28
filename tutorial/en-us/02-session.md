@@ -240,6 +240,8 @@ npm run dev
 
 This command will start the Vite development server. Open your preferred browser and go to `http://localhost:5173/`. You should see the React with Vite project's homepage.
 
+> **Note**: if you prefer, you can run the command: `npm run dev-start`. This command will start the application and `json-server` at the same time.
+
 ## Conclusion
 
 And that's it! In this session, we learned how to set up the development environment for the employee management project.
@@ -249,4 +251,4 @@ In the next session, we will create the folder and file structure needed for the
 
 See you in the next session!
 
-**[Next: Session 01 ➡️](01-session.md)** | **[Next: Session 03 ➡️](03-session.md)**
+**[Previous: Session 01 ➡️](01-session.md)** | **[Next: Session 03 ➡️](03-session.md)**
