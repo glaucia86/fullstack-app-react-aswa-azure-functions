@@ -242,6 +242,40 @@ This command will start the Vite development server. Open your preferred browser
 
 > **Note**: if you prefer, you can run the command: `npm run dev-start`. This command will start the application and `json-server` at the same time.
 
+## Project Structure
+
+Now that we have set up the development environment, your project structure should look like this:
+
+```text
+client/
+  ├── node_modules/
+  ├── public/
+  ├── src/
+  │   ├── components/
+  │   ├── pages/
+  │   ├── services/
+  │   ├── types/
+  │   ├── App.css
+  │   ├── App.tsx
+  │   ├── index.css
+  │   ├── main.tsx
+  │   ├── vite-env.d.ts
+  ├── .gitignore
+  ├── db.json
+  ├── eslint.config.js
+  ├── index.html
+  ├── package-lock.json
+  ├── package.json
+  ├── postcss.config.js
+  ├── README.md
+  ├── tailwind.app.json
+  ├── tsconfig.json
+  ├── tsconfig.node.json
+  ├── vite.config.ts
+```
+
+Most of this structure was automatically created by Vite when we set up the project. However, as we progress with the development, we'll be adding new folders and files to better organize the project.
+
 ## Conclusion
 
 And that's it! In this session, we learned how to set up the development environment for the employee management project.

@@ -242,6 +242,40 @@ Este comando iniciará o servidor de desenvolvimento do Vite. Abra o browser de 
 
 > **Nota**: se você preferir, pode executar o comando: `npm run dev-start`. Esse comando iniciará a aplicação e o `json-server` ao mesmo tempo.
 
+## Estrutura do projeto
+
+Agora que configuramos o ambiente de desenvolvimento para o projeto, a estrutura do projeto deve ser semelhante a esta:
+
+```text
+client/
+  ├── node_modules/
+  ├── public/
+  ├── src/
+  │   ├── components/
+  │   ├── pages/
+  │   ├── services/
+  │   ├── types/
+  │   ├── App.css
+  │   ├── App.tsx
+  │   ├── index.css
+  │   ├── main.tsx
+  │   ├── vite-env.d.ts
+  ├── .gitignore
+  ├── db.json
+  ├── eslint.config.js
+  ├── index.html
+  ├── package-lock.json
+  ├── package.json
+  ├── postcss.config.js
+  ├── README.md
+  ├── tailwind.app.json
+  ├── tsconfig.json
+  ├── tsconfig.node.json
+  ├── vite.config.ts
+```
+
+Boa parte dessa estrutura foi criada automaticamente pelo Vite quando criamos o projeto. Porém, ao decorrer do desenvolvimento, criaremos novas pastas e arquivos para organizar o projeto.
+
 ## Conclusão
 
 E é isso! Nessa sessão, aprendemos a configurar o ambiente de desenvolvimento para o projeto de gerenciamento de funcionários.
