@@ -230,7 +230,6 @@ npm run mock-api
 
 Este comando iniciará o `json-server` e criará uma API REST com os dados do arquivo `db.json`. Abra o browser de sua preferência e acesse o endereço: `http://localhost:3000/employees`. Você verá os dados dos funcionários que estão no arquivo `db.json`.
 
-
 ![json-server](../images/json-server-action.png)
 
 Em seguida, abra outro terminal no Visual Studio Code e execute o seguinte comando:
