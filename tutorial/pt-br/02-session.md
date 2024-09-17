@@ -64,7 +64,7 @@ Vamos explicar o que cada uma dessas dependências fará no projeto:
 - **[@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)**: é um pacote de tipos de TypeScript para a biblioteca `react-router-dom`. Usaremos esse pacote para adicionar tipos ao `react-router-dom`.
 - **[tailwindcss, postcss, autoprefixer](https://www.npmjs.com/package/tailwindcss)**: é uma biblioteca de utilitários CSS que nos permite criar estilos rapidamente. Usaremos o Tailwind CSS para estilizar a aplicação.
 
-> **Nota**: O Tailwind CSS é uma biblioteca de utilitários CSS que nos permite criar estilos rapidamente. Usaremos o Tailwind CSS para estilizar a aplicação. Se você não está familiarizado com o Tailwind CSS, recomendamos que você leia a [documentação oficial](https://tailwindcss.com/docs/installation).
+> 👉 **Nota**: O Tailwind CSS é uma biblioteca de utilitários CSS que nos permite criar estilos rapidamente. Usaremos o Tailwind CSS para estilizar a aplicação. Se você não está familiarizado com o Tailwind CSS, recomendamos que você leia a [documentação oficial](https://tailwindcss.com/docs/installation).
 
 ## Configuração do Tailwind CSS
 
@@ -281,7 +281,7 @@ Boa parte dessa estrutura foi criada automaticamente pelo Vite quando criamos o 
 E é isso! Nessa sessão, aprendemos a configurar o ambiente de desenvolvimento para o projeto de gerenciamento de funcionários.
 Também configuramos o Tailwind CSS, ESLint, e o `json-server` para simular uma API REST.
 
-Na próxima sessão, vamos criar a estrutura de pastas e arquivos que serão necessários para o desenvolvimento da aplicação.
+Na próxima sessão, vamos criar a interface `Employee` que servirá como um 'contrato' para a estrutura de dados dos funcionários da nossa aplicação.
 
 Até a próxima sessão!
 

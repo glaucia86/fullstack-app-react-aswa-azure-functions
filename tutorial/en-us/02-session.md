@@ -64,7 +64,7 @@ Let's explain what each of these dependencies will do in the project:
 - **[@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)**: is a TypeScript types package for the `react-router-dom` library. We'll use this package to add types to `react-router-dom`.
 - **[tailwindcss, postcss, autoprefixer](https://www.npmjs.com/package/tailwindcss)**: is a utility-first CSS framework that allows us to create styles quickly. We'll use Tailwind CSS to style the application.
 
-> **Note**: Tailwind CSS is a utility-first CSS framework that allows us to create styles quickly. We'll use Tailwind CSS to style the application. If you're not familiar with Tailwind CSS, we recommend reading the [official documentation](https://tailwindcss.com/docs/installation).
+> 👉 **Note**: Tailwind CSS is a utility-first CSS framework that allows us to create styles quickly. We'll use Tailwind CSS to style the application. If you're not familiar with Tailwind CSS, we recommend reading the [official documentation](https://tailwindcss.com/docs/installation).
 
 ## Tailwind CSS Configuration
 
@@ -240,7 +240,7 @@ npm run dev
 
 This command will start the Vite development server. Open your preferred browser and go to `http://localhost:5173/`. You should see the React with Vite project's homepage.
 
-> **Note**: if you prefer, you can run the command: `npm run dev-start`. This command will start the application and `json-server` at the same time.
+> 👉 **Note**: if you prefer, you can run the command: `npm run dev-start`. This command will start the application and `json-server` at the same time.
 
 ## Project Structure
 
@@ -281,8 +281,8 @@ Most of this structure was automatically created by Vite when we set up the proj
 And that's it! In this session, we learned how to set up the development environment for the employee management project.
 We also configured Tailwind CSS, ESLint, and `json-server` to simulate a REST API.
 
-In the next session, we will create the folder and file structure needed for the application development.
+In the next session, we’ll create the `Employee` interface, which will serve as a 'contract' for the data structure of the employees in our application.
 
 See you in the next session!
 
-**[Previous: Session 01 ➡️](01-session.md)** | **[Next: Session 03 ➡️](03-session.md)**
+**[Previous: Session 01 ⬅️](01-session.md)** | **[Next: Session 03 ➡️](03-session.md)**
