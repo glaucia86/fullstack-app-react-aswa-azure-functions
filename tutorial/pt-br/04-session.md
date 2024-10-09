@@ -1,4 +1,4 @@
-## Session 04: Serviços de API
+# Session 04: Serviços de API
 
 Nessa sessão, vamos criar um arquivo que será fundamental para estabelecer a comunicação entre a nossa aplicação no lado do Frontend e o Backend. Lembrando que, nesse primeiro momento estamos focando no desenvolvimento no lado do Frontend. Mas, para simular um funcionamento de uma API usaremos o API mock server, a qual estaremos detalhando mais adiante.
 
