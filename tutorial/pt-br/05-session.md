@@ -414,13 +414,13 @@ O `EmployeeList` será um componente reutilizável para listar os funcionários 
 
 Para isso, vamos seguir os passos abaixo:
 
-1. Crie um novo arquivo dentro de: `src/components/EmployeeList.tsx`
+7. Crie um novo arquivo dentro de: `src/components/EmployeeList.tsx`
 
 ```bash
 touch src/components/EmployeeList.tsx
 ```
 
-2. Agora abre o arquivo `EmployeeList.tsx` e comece adicionando as importações necessárias:
+8. Agora abre o arquivo `EmployeeList.tsx` e comece adicionando as importações necessárias:
 
 <details><summary><b>src/components/EmployeeList.tsx</b></summary>
 
@@ -437,7 +437,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 </details>
 <br/>
 
-3. Vamos criar o componente `EmployeeList`:
+9. Vamos criar o componente `EmployeeList`:
 
 <details><summary><b>src/components/EmployeeList.tsx</b></summary>
 
@@ -511,7 +511,7 @@ export default EmployeeList;
 </details>
 <br/>
 
-4. Agora, vamos implementar a renderização da lista de funcionários:
+10. Agora, vamos implementar a renderização da lista de funcionários:
 
 <details><summary><b>src/components/EmployeeList.tsx</b></summary>
 
