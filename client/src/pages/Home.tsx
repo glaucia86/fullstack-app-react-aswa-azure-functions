@@ -33,7 +33,9 @@ const Home: React.FC = () => {
   return (
     <div className='container mx-auto mt-8'>
       <div className='bg-white p-8 shadow-lg rounded-lg max-w-6xl mx-auto'>
-        <h1 className='text-3xl font-bold mb-4'>Add New Employee</h1>
+        <h1 className='text-3xl font-bold mb-6 text-gray-800'>
+          Add New Employee
+        </h1>
         <div className='pl-4'>
           <EmployeeForm onSubmit={handleSubmit} />
         </div>

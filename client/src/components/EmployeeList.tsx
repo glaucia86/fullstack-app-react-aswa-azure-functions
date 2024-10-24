@@ -76,9 +76,9 @@ const EmployeeList: React.FC = () => {
 
   return (
     <div className='container mx-auto mt-8'>
-      <table className='min-w-full bg-white border border-gray-300 shadow-lg'>
+      <table className='min-w-full bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden'>
         <thead>
-          <tr>
+          <tr className='bg-gray-200'>
             <th className='py-2 px-4 border-b text-center'>Name</th>
             <th className='py-2 px-4 border-b text-center'>Job Role</th>
             <th className='py-2 px-4 border-b text-center'>Salary</th>
@@ -88,7 +88,7 @@ const EmployeeList: React.FC = () => {
         </thead>
         <tbody>
           {employees.map((employee) => (
-            <tr key={employee.id}>
+            <tr key={employee.id} className='hover: bg-gray-50'>
               <td className='py-2 px-4 border-b text-center'>
                 {employee.name}
               </td>
@@ -107,18 +107,22 @@ const EmployeeList: React.FC = () => {
                 {employee.employee_registration}
               </td>
               <td className='py-2 px-4 border-b text-center flex justify-center items-center'>
-                <button
-                  onClick={() => handleUpdate(employee.id)}
-                  className='bg-blue-500 text-white px-2 py-1 rounded flex items-center justify-center'
-                >
-                  <FaEdit />
-                </button>
-                <button
-                  onClick={() => handleDelete(employee.id)}
-                  className='bg-red-500 text-white px-2 py-1 rounded flex items-center justify-center ml-2'
-                >
-                  <FaTrash />
-                </button>
+                <div className='flex space-x-2'>
+                  <button
+                    onClick={() => handleUpdate(employee.id)}
+                    className='bg-blue-500 text-white p-2 rounded hover:bg-blue-600 
+                          transition-colors duration-300'
+                  >
+                    <FaEdit className='text-lg' />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(employee.id)}
+                    className='bg-red-500 text-white p-2 rounded hover:bg-red-600 
+                          transition-colors duration-300'
+                  >
+                    <FaTrash className='text-lg' />
+                  </button>
+                </div>
               </td>
             </tr>
           ))}

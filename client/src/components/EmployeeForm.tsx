@@ -85,7 +85,7 @@ export default function EmployeeForm({
           value={name}
           onChange={handleEmployeeFormChange}
           required
-          className='w-full px-3 py-2 border rounded'
+          className='w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
         />
       </div>
       <div className='mb-4'>
@@ -99,7 +99,7 @@ export default function EmployeeForm({
           value={job_role}
           onChange={handleEmployeeFormChange}
           required
-          className='w-full px-3 py-2 border rounded'
+          className='w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
         />
       </div>
       <div className='mb-4'>
@@ -114,7 +114,7 @@ export default function EmployeeForm({
           thousandSeparator={true}
           prefix={'$'}
           required
-          className='w-full px-3 py-2 border rounded'
+          className='w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
         />
       </div>
       <div className='mb-4'>
@@ -128,12 +128,13 @@ export default function EmployeeForm({
           value={employee_registration}
           onChange={handleEmployeeFormChange}
           required
-          className='w-full px-3 py-2 border rounded'
+          className='w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
         />
       </div>
       <button
         type='submit'
-        className='bg-blue-500 text-white px-4 py-2 rounded flex items-center space-x-2'
+        className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 
+                 flex items-center space-x-2 transition-colors duration-300'
       >
         {employee ? (
           <>
