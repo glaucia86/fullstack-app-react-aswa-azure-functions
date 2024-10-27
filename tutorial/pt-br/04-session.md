@@ -58,6 +58,9 @@ const api = axios.create({
 });
 ```
 
+</details>
+<br/>
+
 Isso nos permitirá configurar opções padrões para todas as requisições, como a URL base e o cabeçalho `Content-Type`.
 
 ## Implementando os métodos de serviço
