@@ -6,15 +6,14 @@
       "salary": 85000,
       "employee_registration": 235565,
       "updatedAt": "2024-08-25T20:49:30.293Z",
-      "id": "2"
+      "id": "1"
     },
     {
       "name": "John Doe",
       "job_role": "Software Engineer",
-      "salary": 75000,
+      "salary": 80000,
       "employee_registration": 235566,
-      "updatedAt": "2024-08-25T20:49:30.293Z",
-      "id": "3"
+      "id": "2"
     },
     {
       "name": "Alice Johnson",
@@ -22,7 +21,7 @@
       "salary": 75000,
       "employee_registration": 235567,
       "updatedAt": "2024-08-25T21:30:55.094Z",
-      "id": "4"
+      "id": "3"
     }
   ]
 }
