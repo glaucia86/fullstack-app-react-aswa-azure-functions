@@ -84,3 +84,5 @@ Não se esqueça de:
 Quer continuar aprendendo e transformar esta aplicação em uma solução completa com backend em nuvem? Junte-se a nós na próxima fase do workshop, onde exploraremos o mundo do desenvolvimento serverless com Azure Functions!
 
 Obrigado por participar desta jornada de aprendizado! Nos vemos na próxima fase! 🚀🚀🚀
+
+**[Anterior: Sessão 08 ⬅️](08-session.md)** | **[Próximo: Sessão 10 ➡️](10-session.md)**
