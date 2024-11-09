@@ -6,9 +6,9 @@ Estamos agora na segunda fase do nosso workshop! Nessa sessão, vamos começar a
 
 No BackEnd, utilizaremos as seguintes tecnologias:
 
-- 🔹**[Azure Functions (TypeScript programming model v4)](https://learn.microsoft.com/en-us/azure/azure-functions/)**
-- 🔹**[Azure Cosmos DB for MongoDB](https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/introduction)**
-- 🔹**[Prisma](https://www.prisma.io/)**
+- 🔹 **[Azure Functions (TypeScript programming model v4)](https://learn.microsoft.com/en-us/azure/azure-functions/)**
+- 🔹 **[Azure Cosmos DB for MongoDB](https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/introduction)**
+- 🔹 **[Prisma](https://www.prisma.io/)**
 - 🔹E, muito mais...
 
 Vamos começar? 🚀
