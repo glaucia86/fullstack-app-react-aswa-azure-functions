@@ -1,0 +1,1 @@
+--- Camada de Domínio - Implementando Entidade `Employee`
