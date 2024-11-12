@@ -1,4 +1,4 @@
-# Camada de Domain - Implementando Value Objects
+# Camada de Domínio - Implementando Value Objects
 
 Nessa sessão, vamos iniciar a implementação da camada de domínio da nossa aplicação. Pois estaremos adotando o padrão de arquitetura de software chamado de **[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html)** e incluso conceitos de **[SOLID](https://en.wikipedia.org/wiki/SOLID)**.
 
@@ -6,9 +6,9 @@ Estaremos ensinando o passo a passo para que você possa aprender a criar uma ap
 
 Nesse primeiro momento, vamos criar os _Value Objects_ que serão utilizados na nossa aplicação.
 
-## Introdução a camada de Domain
+## Introdução a camada de Domínio
 
-A camada de Domain é o coração da nossa aplicação. Pois nela contém: 
+A camada de Domínio é o coração da nossa aplicação. Pois nela contém: 
 
 - 🔹 As entedidades principais do negócio
 - 🔹 As regras de negócio fundamentais
@@ -18,7 +18,7 @@ No nosso caso, estamos criando um sistema de gerenciamento de funcionários, ent
 
 ## Criando a estrutura de arquivos
 
-Vamos agora criar a estrutura necessária para a camada de Domain para a nossa aplicação. Abre o terminal e execute os comandos abaixo:
+Vamos agora criar a estrutura necessária para a camada de domínio para a nossa aplicação. Abre o terminal e execute os comandos abaixo:
 
 ```bash
 mkdir -p api/src/domain/entities

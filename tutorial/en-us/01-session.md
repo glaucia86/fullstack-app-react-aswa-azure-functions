@@ -1,4 +1,4 @@
-# Full Stack Application with React, Azure Static Web Apps and Azure Functions - Part 01
+# Full Stack Application with React, Azure Static Web Apps and Azure Functions
 
 Repository link: **[https://github.com/glaucia86/todo-react-aswa-azure-functions](https://github.com/glaucia86/todo-react-aswa-azure-functions)**
 
