@@ -12,17 +12,15 @@ export default class EmployeeRegistration {
       throw new Error('Employee registration must be greater than 0 and not negative');
     }
 
-    // Vamos converter para string para verifiar o comprimento do número de registro do funcionário
-    const registrationNumberString = registrationNumber.toString();
-
-    // Verifica se tem entre 5 e 6 dígitos (baseado no formato do FrontEnd)
-    if (registrationNumberString.length < 5 || registrationNumberString.length > 6) {
-      throw new Error('Employee registration must be between 5 and 6 digits');
-    }
-
     // Verifica se o número de registro do funcionário é um número inteiro
     if (!Number.isInteger(registrationNumber)) {
       throw new Error('Employee registration must be an integer number');
+    }
+
+    const registrationNumberString = registrationNumber.toString();
+    // Verifica se tem entre 5 e 6 dígitos (baseado no formato do FrontEnd)
+    if (registrationNumberString.length !== 6) {
+      throw new Error('Employee registration must be exactly 6 digits');
     }
   }
 
