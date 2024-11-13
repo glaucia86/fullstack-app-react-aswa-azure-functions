@@ -1,4 +1,4 @@
-# Domain Layer - Implementing Value Objects
+# Session 11: Domain Layer - Implementing Value Objects
 
 In this session, we will start implementing the domain layer of our application. We will adopt the software architecture pattern known as **[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html)** and include concepts from **[SOLID](https://en.wikipedia.org/wiki/SOLID)**.
 
@@ -58,22 +58,20 @@ export default class EmployeeRegistration {
   }
 
   private validateRegistrationNumber(registrationNumber: number): void {
-    // Ensure the employee registration number is greater than 0 and not negative
+    // Let's validate if the employee registration number is greater than 0 and not a negative number
     if (registrationNumber <= 0) {
       throw new Error('Employee registration must be greater than 0 and not negative');
     }
 
-    // Convert to string to verify the length of the registration number
-    const registrationNumberString = registrationNumber.toString();
-
-    // Ensure it has between 5 and 6 digits (based on the FrontEnd format)
-    if (registrationNumberString.length < 5 || registrationNumberString.length > 6) {
-      throw new Error('Employee registration must be between 5 and 6 digits');
-    }
-
-    // Ensure the employee registration number is an integer
+    // Checks if the employee registration number is an integer
     if (!Number.isInteger(registrationNumber)) {
       throw new Error('Employee registration must be an integer number');
+    }
+
+    const registrationNumberString = registrationNumber.toString();
+    // Checks if it has between 5 and 6 digits (based on the FrontEnd format)
+    if (registrationNumberString.length !== 6) {
+      throw new Error('Employee registration must be exactly 6 digits');
     }
   }
 
@@ -85,7 +83,7 @@ export default class EmployeeRegistration {
     return this.registrationNumber === otherRegistration.getValue();
   }
 
-  // Serialize the object to a number
+  // Serializes the object to a number
   public toJSON(): number {
     return this.registrationNumber;
   }
