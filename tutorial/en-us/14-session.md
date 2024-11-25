@@ -1,4 +1,4 @@
-# Session 13: Defining the Repository Contract
+# Session 14: Defining the Repository Contract
 
 In this session, we will define the repository contract and understand why this is important and how it can help us keep our code more organized and cohesive.
 
