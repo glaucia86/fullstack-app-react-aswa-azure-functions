@@ -1,38 +1,38 @@
-# Session 13: Testando a Entidade `Employee`
+# Session 13: Testing the `Employee` Entity
 
-Nessa sessão, vamos aprender a como testar adequadamente nossa entidade `Employee`, garantindo que todas as regras de negócio estejam funcionando conforme esperado.
+In this session, we will learn how to properly test our `Employee` entity, ensuring that all business rules are working as expected.
 
-Os testes são fundamentais não só para verificar o funcionamento atual, mas também para facilitar e evitar regressões.
+Tests are essential not only to verify current functionality but also to facilitate future updates and prevent regressions.
 
-> Nota: o objetivo desse curso não é ensinar a escrever testes. Mas, sim a como deixar a sua aplicação mais escalável, robusta e segura com o uso dos serviços do Azure. Estaremos, de forma excepcional nessa sessão explicando de forma basica a como criar testes. Assim sendo, não estaremos testando toda a aplicação, mas sim, somente a entidade `Employee`. Sinta-se a vontade para aprofundar seus conhecimentos em testes ou até mesmo implementar testes mais complexos em toda a aplicação.
+> Note: The goal of this course is not to teach you how to write tests. Instead, it aims to make your application more scalable, robust, and secure by using Azure services. Exceptionally, in this session, we will explain basic test creation. Therefore, we will not be testing the entire application, only the `Employee` entity. Feel free to deepen your knowledge in testing or even implement more complex tests throughout the application.
 
-## Introdução a Testes de Domínio
+## Introduction to Domain Testing
 
-No contexto do Domain-Driven Design (DDD), testar entidades de domínio é muito importante pelos seguintes motivos:
+In the context of Domain-Driven Design (DDD), testing domain entities is essential for the following reasons:
 
-- Garantem que as regras de negócio estão sendo aplicadas corretamente.
-- Servem como documentação viva do comportamento esperado.
-- Facilitam refatorações futuras.
-- Previnem regressões.
-- Ajudam a manter a integridade do domínio.
+- Ensures business rules are applied correctly.
+- Acts as a living documentation of expected behavior.
+- Facilitates future refactoring.
+- Prevents regressions.
+- Helps maintain domain integrity.
 
-Agora que podemos entender de forma básica a importância dos testes de domínio, vamos começar a configurar o ambiente para que possamos testar a entidade `Employee`.
+Now that we understand the basic importance of domain tests, let’s start setting up the environment to test the `Employee` entity.
 
-## Configurando o ambiente de testes
+## Setting Up the Test Environment
 
-Como estamos usando TypeScript em nossa aplicação, precisamos configurar o ambiente de testes adequadamente e garantir uma execução correta dos testes. Para isso, siga os passos abaixo:
+As we are using TypeScript in our application, we need to configure the test environment appropriately to ensure correct test execution. Follow the steps below:
 
-1. Vamos instalar toda as dependências necessárias:
+1. Let’s install all necessary dependencies:
 
 ```bash
-# Dependências principais do Jest e TypeScript
+# Core Jest and TypeScript dependencies
 npm install --save-dev jest @types/jest ts-jest ts-node
 
-# Dependências do Babel para suporte ao TypeScript
+# Babel dependencies to support TypeScript
 npm install --save-dev @babel/core @babel/preset-env @babel/preset-typescript
 ```
 
-2. Agora vamos configurar o Babel, pois ele nos ajuda a transpilar o código TypeScript para JavaScript. Crie um arquivo chamado `.babelrc` na raiz do projeto e adicione o seguinte conteúdo:
+2. Now, let’s configure Babel, which helps us transpile TypeScript code to JavaScript. Create a file named `.babelrc` at the project root and add the following content:
 
 ```json
 {
@@ -43,7 +43,7 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-typescript
 }
 ```
 
-3. Crie o arquivo de configuração do Jest chamado `jest.config.ts` na raiz do projeto e adicione o seguinte conteúdo:
+3. Create a Jest configuration file named `jest.config.ts` at the project root with the following content:
 
 ```typescript
 /** @type {import('ts-jest').JestConfigWithTsJest} */
@@ -63,7 +63,7 @@ module.exports = {
 };
 ```
 
-4. Agora é o momento de atualizarmos o arquivo `package.json` para adicionar os scripts de testes. Adicione o seguinte conteúdo:
+4. Now it’s time to update the `package.json` file to add the test scripts. Add the following content:
 
 ```json
   "scripts": {
@@ -75,19 +75,20 @@ module.exports = {
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
+  }
 ```
 
-5. Por fim, vamos criar uma estrutura organizada para os nossos testes. Crie uma pasta chamada `__tests__` dentro da pasta `src` e adicione um arquivo chamado `employee.test.ts` com o seguinte conteúdo:
+5. Finally, let’s create a structured folder for our tests. Create a folder named `__tests__` within the `src` folder and add a file named `employee.test.ts` with the following content:
 
 ```bash
 mkdir -p src/domain/entities/__tests__/employee.test.ts
 ```
 
-Agora vamos começar a escrever os testes para a entidade `Employee`.
+Now, let’s start writing tests for the `Employee` entity.
 
-## Implementando os testes
+## Implementing the Tests
 
-Agora vamos implementar os testes para a nossa entidade `Employee`. Nossa suíte de testes será organizada em grupos lógicos, assim caso você queira adicionar mais testes, basta adicionar mais grupos.
+We will implement tests for our `Employee` entity. Our test suite will be organized into logical groups so that if you want to add more tests, you can easily add more groups.
 
 <details><summary><b>src/domain/entities/__tests__/employee.spec.ts</b></summary>
 
@@ -103,7 +104,7 @@ describe('Test Employee Entity', () => {
     jest.useRealTimers();
   });
 
-  // Dados válidos para reutilizar nos testes
+  // Valid data to reuse in tests
   const validEmployeeData = {
     id: 'emp-123',
     name: 'John Doe',
@@ -288,6 +289,8 @@ describe('Test Employee Entity', () => {
     });
 
     it('should update employee name', () => {
+
+
       const newName = 'John Smith';
       employee.updateName(newName);
       expect(employee.getName()).toBe(newName);
@@ -361,50 +364,51 @@ describe('Test Employee Entity', () => {
 
 </details>
 
-Ufa! Muita coisa, não é mesmo? Mas, nesse caso estamos testando:
+Phew! Quite a lot, right? But in this case, we are testing:
 
-- **Criação Válida de um Funcionário**
-   - Verifica se um funcionário é criado corretamente com dados válidos.
+- **Valid Employee Creation**
+   - Verifies if an employee is created correctly with valid data.
 
-- **Validações de Nome**
-   - Verifica se o nome é muito curto ou muito longo ou contém caracteres inválidos.
+- **Name Validations**
+   - Checks if the name is too short or too long or contains invalid characters.
 
-- **Validações de Cargo**
-  - Verifica se um determinado cargo está escrito de forma muito curta, longo ou num formato inválido.
+- **Job Role Validations**
+  - Checks if a given job role is too short, too long, or in an invalid format.
 
-- **Validações de Salário**
-  - Verifica se o salário é negativo ou zero.
-  - Verifica se o salário é aumentado corretamente.
+- **Salary Validations**
+  - Checks if the salary is negative or zero.
+  - Checks if the salary is correctly increased.
 
-- **Validações de Registro do Funcionário**
-  - Verifica se o registro do funcionário é um número inteiro, positivo e com 6 dígitos.
-  - Verifica também se o número de registro do funcionário é um número negativo
-  
-- **Atualizações do Funcionário**
-   - Verifica se o nome, cargo e salário do funcionário são atualizados corretamente.
-   - Verifica se o salário é aumentado corretamente.
-   - Verifica se os timestamps são atualizados corretamente.
-- Serialização do Funcionário
-   - Verifica se o funcionário é corretamente serializado para JSON.
-   - Verifica também se todas as propriedades estão corretas.
+- **Employee Registration Validations**
+  - Checks if the employee registration is a positive integer with 6 digits.
+  - Also checks if the employee’s registration number is a negative number.
 
-## Executando os testes
+- **Employee Updates**
+   - Checks if the employee’s name, job role, and salary are updated correctly.
+   - Checks if the salary is increased correctly.
+   - Checks if timestamps are updated correctly.
 
-Agora que temos os testes implementados, vamos executá-los para garantir que tudo está funcionando corretamente. Execute os seguintes comandos em terminais diferentes, lembrando que deve ser executado dentro da pasta `api`:
+- **Employee Serialization**
+   - Checks if the employee is correctly serialized to JSON.
+   - Also verifies that all properties are correct.
+
+## Running the Tests
+
+Now that we have the tests implemented, let’s run them to ensure everything is working correctly. Run the following commands in different terminals, remembering that they should be executed within the `api` folder:
 
 ```bash
-npm test               # Executa todos os testes uma vez
-npm run test:watch    # Executa em modo watch (útil durante o desenvolvimento)
-npm run test:coverage # Executa e gera relatório de cobertura
+npm test               # Runs all tests once
+npm run test:watch    # Runs in watch mode (useful during development)
+npm run test:coverage # Runs and generates a coverage report
 ```
 
-## Analisando a cobertura de testes
+## Analyzing Test Coverage
 
-Execute o comando `npm run test:coverage` para gerar um relatório de cobertura de testes. O relatório será gerado na pasta `coverage` e você pode abri-lo em seu navegador para analisar a cobertura de testes.
+Run the command `npm run test:coverage` to generate a test coverage report. The report will be generated in the `coverage` folder, and you can open it in your browser to analyze test coverage.
 
 ![alt text](../images/test-coverage.png)
 
-E no terminal, você verá algo parecido com isso:
+In the terminal, you’ll see something like this:
 
 ```bash
 ---------------------------|---------|----------|---------|---------|-------------------
@@ -415,17 +419,17 @@ E no terminal, você verá algo parecido com isso:
 | employee.ts | 93.02   | 92.3     | 94.11   | 93.02   | 61,108-109        |
 ```
 
-Esse relatório de cobertura nos mostra:
+This coverage report shows:
 
-- Linhas de código testadas
-- Branches (condicionais) testados
-- Funções testadas
+- Tested lines of code
+- Tested branches (conditionals)
+- Tested functions
 
-Sempre que você adicionar ou modificar código, execute os testes e verifique a cobertura para garantir que tudo está funcionando conforme esperado. Isso é fundamental para manter a qualidade do código e evitar regressões.
+Whenever you add or modify code, run the tests and check the coverage to ensure everything is working as expected. This is essential to maintain code quality and prevent regressions.
 
-## Boas práticas em testes
+## Best Practices in Testing
 
-**1. Arrange-Act-Assert**: Organize seus testes em três partes: preparação (arrange), execução (act) e verificação (assert). Isso torna o teste mais legível e fácil de entender. Veja um exemplo:
+**1. Arrange-Act-Assert**: Organize your tests into three parts: arrange, act, and assert. This makes the test more readable and easier to understand. Here’s an example:
 
 ```typescript
 it('should update employee name', () => {
@@ -441,17 +445,17 @@ it('should update employee name', () => {
 });
 ```
 
-**2.Testes Descritivos**: Dê nomes descritivos aos seus testes para que seja fácil entender o que está sendo testado. Evite nomes genéricos como `test1`, `test2`, etc.
+**2. Descriptive Tests**: Give descriptive names to your tests so it’s easy to understand what is being tested. Avoid generic names like `test1`, `test2`, etc.
 
 ```typescript
-// ❌ Ruim
+// ❌ Bad
 it('should work', () => {})
 
-// ✅ Bom
+// ✅ Good
 it('should throw error when name contains invalid characters', () => {})
 ```
 
-**3.Dados de Teste Consistentes**: Use dados consistentes e reutilizáveis em seus testes. Isso facilita a manutenção e evita repetição de código.
+**3. Consistent Test Data**: Use consistent and reusable data in your tests. This makes maintenance easier and avoids code repetition.
 
 ```typescript
 const validEmployeeData = {
@@ -461,29 +465,26 @@ const validEmployeeData = {
 };
 ```
 
-## Conclusão
+## Conclusion
 
-Nesta sessão, alcançamos um marco importante no desenvolvimento da nossa aplicação ao estabelecer uma estrutura robusta de testes para nossa entidade Employee. A configuração cuidadosa do ambiente de testes, utilizando TypeScript, nos proporciona uma base sólida para garantir a qualidade e confiabilidade do nosso código.
+In this session, we achieved a significant milestone in our application development by establishing a robust test structure for our `Employee` entity. The careful configuration of the test environment using TypeScript provides us with a solid foundation to ensure the quality and reliability of our code.
 
-A implementação do TypeScript em nosso ambiente de testes não é apenas uma escolha técnica, mas uma decisão estratégica que nos permite detectar erros em tempo de compilação e fornecer um melhor suporte de ferramentas durante o desenvolvimento. Esta tipagem forte nos ajuda a evitar erros comuns e torna nosso código mais seguro e mais fácil de manter.
+Using TypeScript in our test environment is not only a technical choice but a strategic decision that enables us to detect errors at compile-time and provides better tooling support during development. This strong typing helps us avoid common mistakes and makes our code safer and easier to maintain.
 
-A capacidade de gerar relatórios detalhados de cobertura de código nos oferece visibilidade clara sobre quais partes do nosso domínio estão adequadamente testadas e quais áreas podem precisar de atenção adicional. Estes relatórios servem não apenas como métrica de qualidade, mas também como guia para nosso desenvolvimento contínuo, ajudando-nos a identificar pontos cegos em nossa suíte de testes.
+The ability to generate detailed code coverage reports offers us clear visibility into which parts of our domain are adequately tested and which areas might need additional attention. These reports serve not only as a quality metric but also as a guide for our continuous development, helping us identify blind spots in our test suite.
 
-A consistência do ambiente de desenvolvimento que estabelecemos é fundamental para o trabalho em equipe. Cada desenvolvedor que trabalha no projeto pode confiar que os testes serão executados de maneira idêntica em sua máquina local, reduzindo significativamente o risco de problemas relacionados a diferenças de ambiente. Esta padronização também facilita a integração contínua e a implantação do nosso código.
+The most significant aspect of this session, however, is how our tests now act as guardians of our domain’s business rules. Every test we write is not just a technical check but an explicit statement of how our `Employee` entity should behave according to business rules. This gives us confidence to evolve our application, knowing that any violation of these rules will be immediately detected by our test suite.
 
-O aspecto mais significativo desta sessão, no entanto, é como nossos testes agora atuam como guardiões das regras de negócio do nosso domínio. Cada teste que escrevemos não é apenas uma verificação técnica, mas uma afirmação explícita de como nossa entidade Employee deve se comportar segundo as regras do negócio. Isso nos dá confiança para evoluir nossa aplicação, sabendo que qualquer violação dessas regras será imediatamente detectada por nossa suíte de testes.
+With this foundation established, we are well-positioned to move to the next phase of our development, where we will implement the persistence layer through repositories. The confidence provided by our test suite allows us to proceed with this implementation, knowing that the behavior of our domain will remain intact.
 
-Com esta base estabelecida, estamos bem posicionados para avançar para a próxima fase do nosso desenvolvimento, onde implementaremos a camada de persistência através dos repositories. A confiança proporcionada por nossa suíte de testes nos permitirá fazer essa implementação com a certeza de que o comportamento do nosso domínio permanecerá íntegro.
+## Next Session: Implementing Repositories
 
-## Próxima Sessão: Implementando os Repositories
+In the next session, we'll define the repository contract and understand the importance of the Repository pattern in Domain-Driven Design. We will learn:
 
-Na próxima sessão, vamos definir o contrato do repositório e entender a importância do padrão Repository no Domain-Driven Design. Aprenderemos:
+- The importance of the Repository pattern in Domain-Driven Design.
+- How the Repository isolates the domain from persistence.
+- How to define the `IEmployeeRepository` repository contract.
+  
+Let's continue our application development journey and explore how repositories help us maintain the integrity of our domain and separate persistence concerns from the rest of the application. And, we'll see you in the next session!
 
-- A importância do padrão Repository no Domain-Driven Design.
-- Como o Repository isola o domínio da persistência.
-- Como definir o contrato do repositório `IEmployeeRepository`.
-
-Vamos continuar a jornada de desenvolvimento da nossa aplicação e explorar como os repositories nos ajudam a manter a integridade do nosso domínio e a separar as preocupações de persistência do restante da aplicação. E, nos vemos na próxima sessão!
-
-**[Anterior: Sessão 12 ⬅️](12-session.md)** | **[Próximo: Sessão 14 ➡️](14-session.md)**
-
+**[Previous: Session 12 ⬅️](12-session.md)** | **[Next: Session 14 ➡️](14-session.md)**
