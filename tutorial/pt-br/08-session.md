@@ -1,4 +1,4 @@
-# Session 09: Configuração do Mock API
+# Session 08: Configuração do Mock API
 
 Nesta sessão, vamos configurar um servidor mock para simular uma API REST, permitindo que nossa aplicação realize operações CRUD reais durante o desenvolvimento do lado do cliente.
 
