@@ -1,4 +1,4 @@
-# Camada de Domain - Implementando Value Objects
+# Session 11: Camada de Domain - Implementando Value Objects
 
 Nessa sessão, vamos iniciar a implementação da camada de domínio da nossa aplicação. Pois estaremos adotando o padrão de arquitetura de software chamado de **[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html)** e incluso conceitos de **[SOLID](https://en.wikipedia.org/wiki/SOLID)**.
 

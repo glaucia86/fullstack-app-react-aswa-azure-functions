@@ -1,4 +1,4 @@
-# Session 08: Estilização com Tailwind CSS
+# Session 07: Estilização com Tailwind CSS
 
 Nesta sessão, vamos explorar como estilizamos cada componente e página da nossa aplicação usando o **[Tailwind CSS](https://tailwindcss.com/)**. O Tailwind nos permite criar uma interface moderna e responsiva usando classes utilitárias diretamente em nossos elementos.
 
