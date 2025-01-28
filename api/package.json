@@ -11,6 +11,11 @@
     "start:dev": "concurrently \"npm run watch\" \"func start\"",
     "prestart": "npm run clean && npm run build",
     "start": "func start",
+    "prisma:generate": "prisma generate --schema=./src/infrastructure/database/prisma/schema.prisma",
+    "prisma:push": "prisma db push --schema=./src/infrastructure/database/prisma/schema.prisma",
+    "prisma:studio": "prisma studio --schema=./src/infrastructure/database/prisma/schema.prisma",
+    "prisma:format": "prisma format --schema=./src/infrastructure/database/prisma/schema.prisma",
+    "prisma:validate": "prisma validate --schema=./src/infrastructure/database/prisma/schema.prisma",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
@@ -27,6 +32,7 @@
     "concurrently": "^9.1.2",
     "prisma": "^6.2.1",
     "rimraf": "^5.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^4.9.5"
   }
 }
