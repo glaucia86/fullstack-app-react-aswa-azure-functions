@@ -14,13 +14,19 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.0.0"
+    "@azure/cosmos": "^4.2.0",
+    "@azure/functions": "^4.0.0",
+    "@prisma/client": "^6.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
-    "@types/node": "18.x",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^18.19.74",
     "azure-functions-core-tools": "^4.x",
     "concurrently": "^9.1.2",
+    "prisma": "^6.2.1",
     "rimraf": "^5.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.9.5"
   }
 }
