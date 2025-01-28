@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple API with Azure Functions, Prisma and Azure Cosmos DB for MongoDB API",
   "main": "dist/src/functions/*.js",
   "scripts": {
     "build": "tsc",
