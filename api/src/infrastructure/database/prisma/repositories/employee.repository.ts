@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { Employee } from "../../../../domain/entities/employee.entity";
-import { IEmployeeRepository } from "../../../../domain/repository/employee.repository";
+import { Employee, IEmployeeRepository } from "../../../../domain";
 
 export class PrismaEmployeeRepository implements IEmployeeRepository {
   private prisma: PrismaClient;

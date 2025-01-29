@@ -1,5 +1,5 @@
-import { IEmployeeRepository } from "../../domain/repository/employee.repository";
-import { PrismaEmployeeRepository } from "../database/prisma/repositories/employee.repository";
+import { IEmployeeRepository } from "../../domain";
+import { PrismaEmployeeRepository } from "../database";
 
 export class DependencyContainer {
   private static employeeRepository: IEmployeeRepository;
