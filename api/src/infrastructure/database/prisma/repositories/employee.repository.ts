@@ -2,11 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { Employee, IEmployeeRepository } from "../../../../domain";
 
 export class PrismaEmployeeRepository implements IEmployeeRepository {
-  private prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private readonly prisma: PrismaClient) {}
 
   async findAll(): Promise<Employee[]> {
     try {
