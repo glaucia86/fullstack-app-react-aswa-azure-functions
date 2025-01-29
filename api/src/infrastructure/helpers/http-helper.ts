@@ -75,5 +75,3 @@ export function created(body: object): HttpResponseInit {
   };
 }
 
-
-
