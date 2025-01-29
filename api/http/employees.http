@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:7071/api
+@contentType = application/json
+
+### Get all employees
+GET {{baseUrl}}/employees
+
+### Create a new employee
+POST {{baseUrl}}/employees
+Content-Type: {{contentType}}
+
+{
+  "name": "John Doe",
+  "job_role": "Software Engineer",
+  "salary": 5000.00,
+  "employee_registration": 856952
+}
