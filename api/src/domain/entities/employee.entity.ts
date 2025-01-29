@@ -1,3 +1,15 @@
+export interface IEmployeeData {
+  name: string;
+  job_role: string;
+  salary: number;
+  employee_registration: number;
+}
+
+export interface IEmployeeWithoutId extends IEmployeeData {
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export class Employee {
   constructor(
     public readonly id: string,
@@ -62,27 +74,29 @@ export class Employee {
     }
   }
 
-  public update(data: Partial<Omit<Employee, 'id' | 'createdAt'>>) {
+  public update(data: Partial<IEmployeeData>) {
 
     if (data.name !== undefined) {
       this.validateName(data.name);
+      this.name = data.name;
     }
 
     if (data.salary !== undefined) {
       this.validateSalary(data.salary);
+      this.salary = data.salary;
     }
 
     if (data.job_role !== undefined) {
       this.validateJobRole(data.job_role);
+      this.job_role = data.job_role;
     }
 
-    Object.assign(this, data);
     this.updatedAt = new Date();
   }
 
-  public static create(data: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'>): Omit<Employee, 'id'> {
-
-    const employee = new Employee(
+  public static create(data: IEmployeeData): IEmployeeWithoutId {
+    // Criamos uma instância temporária para validação
+    const temp = new Employee(
       'temp-id',
       data.name,
       data.job_role,
@@ -92,8 +106,12 @@ export class Employee {
       new Date()
     );
 
+    // Se chegou até aqui, todas as validações passaram
     return {
-      ...data,
+      name: data.name,
+      job_role: data.job_role,
+      salary: data.salary,
+      employee_registration: data.employee_registration,
       createdAt: new Date(),
       updatedAt: new Date()
     };
