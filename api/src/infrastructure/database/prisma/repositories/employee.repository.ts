@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { Employee, IEmployeeRepository } from "../../../../domain";
+import { Employee, IEmployeeData, IEmployeeRepository, IEmployeeWithoutId } from "../../../../domain";
 
 export class PrismaEmployeeRepository implements IEmployeeRepository {
   constructor(private readonly prisma: PrismaClient) {}
@@ -69,7 +69,7 @@ export class PrismaEmployeeRepository implements IEmployeeRepository {
     }
   }
 
-  async create(employeeData: Omit<Employee, "id">): Promise<Employee> {
+  async create(employeeData: IEmployeeWithoutId): Promise<Employee> {
     try {
       const employee = await this.prisma.employee.create({
         data: employeeData
@@ -90,7 +90,7 @@ export class PrismaEmployeeRepository implements IEmployeeRepository {
     }
   }
 
-  async update(id: string, employeeData: Partial<Omit<Employee, "id" | "createdAt" | "employee_registration">>): Promise<Employee> {
+  async update(id: string, employeeData: Partial<IEmployeeData>): Promise<Employee> {
     try {
       const employee = await this.prisma.employee.update({
         where: { id },
