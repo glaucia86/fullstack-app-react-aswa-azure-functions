@@ -1,14 +1,26 @@
+import { PrismaClient } from "@prisma/client";
 import { IEmployeeRepository } from "../../domain";
 import { PrismaEmployeeRepository } from "../database";
 
 export class DependencyContainer {
-  private static employeeRepository: IEmployeeRepository;
+  private static prismaClient: PrismaClient = new PrismaClient();
+  private static repositories = {
+    employee: null as IEmployeeRepository | null
+  };
 
   static getEmployeeRepository(): IEmployeeRepository {
-    if (!this.employeeRepository) {
-      this.employeeRepository = new PrismaEmployeeRepository();
+    if (!this.repositories.employee) {
+      this.repositories.employee = new PrismaEmployeeRepository(this.prismaClient);
     }
 
-    return this.employeeRepository;
+    return this.repositories.employee;
+  }
+
+  static async dispose(): Promise<void> {
+    if (this.prismaClient) {
+      await this.prismaClient.$disconnect();
+      this.prismaClient = null;
+      this.repositories.employee = null;
+    }
   }
 }
